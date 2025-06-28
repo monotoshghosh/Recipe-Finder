@@ -12,7 +12,7 @@ import com.monotoshghosh.recipefinder.data.model.Meal
 @Composable
 fun RecipesList(recipes: List<Meal>) {
     LazyColumn(
-        modifier = Modifier.fillMaxSize().background(Color.White)
+        modifier = Modifier.fillMaxSize().background(Color.Black)
     ){
         items(recipes) {
             RecipeListItem(it)

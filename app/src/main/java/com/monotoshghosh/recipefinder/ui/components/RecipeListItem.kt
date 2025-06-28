@@ -26,12 +26,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.monotoshghosh.recipefinder.data.model.Meal
-
+import com.monotoshghosh.recipefinder.ui.theme.DarkGray
+import com.monotoshghosh.recipefinder.ui.theme.DarkGray2
 @Composable
 fun RecipeListItem(meal: Meal) {
     var expanded by remember { mutableStateOf(false) }
@@ -43,11 +45,12 @@ fun RecipeListItem(meal: Meal) {
         shape = RoundedCornerShape(4.dp),
         border = BorderStroke(1.dp, Color.LightGray),
         colors = CardDefaults.cardColors(
-            Color.White
+            containerColor = DarkGray    // Made the Card Dark Grey
         )
     ) {
         Column(
-            modifier = Modifier.padding(8.dp)
+            modifier = Modifier
+                .padding(8.dp)
         ) {
             if (!meal.strMealThumb.isNullOrEmpty()) {
                 AsyncImage(
@@ -66,16 +69,21 @@ fun RecipeListItem(meal: Meal) {
             Text(
                 text = meal.strMeal ?: "",
                 fontSize = 24.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                color = Color.White
             )
             Spacer(modifier = Modifier.padding(8.dp))
             Text(
                 text = "Ingredients",
                 fontSize = 20.sp,
-                fontWeight = FontWeight.SemiBold
+                fontWeight = FontWeight.SemiBold,
+                fontStyle = FontStyle.Italic,
+                color = Color.White
+
             )
             Text(
-                text = getIngredients(meal)
+                text = getIngredients(meal),
+                color = DarkGray2
             )
             Spacer(modifier = Modifier.padding(8.dp))
 
@@ -84,10 +92,13 @@ fun RecipeListItem(meal: Meal) {
                     Text(
                         text = "Instructions",
                         fontSize = 20.sp,
-                        fontWeight = FontWeight.SemiBold
+                        fontWeight = FontWeight.SemiBold,
+                        fontStyle = FontStyle.Italic,
+                        color = Color.White
                     )
                     Text(
-                        text = meal.strInstructions ?: ""
+                        text = meal.strInstructions ?: "",
+                        color = DarkGray2
                     )
                 }
             }
@@ -101,7 +112,7 @@ fun RecipeListItem(meal: Meal) {
                 Icon(
                     imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
                     contentDescription = "Clear",
-                    tint = Color.Black,
+                    tint = Color.White,
                     modifier = Modifier
                         .align(
                             Alignment.CenterHorizontally
