@@ -2,13 +2,13 @@
 
 A modern Android recipe search app built with Jetpack Compose and MVI architecture. Easily search and explore meals using TheMealDB API.
 
-## Screenshots
+## 📸 Screenshots
 
 <p align="center">
-  <img src="screenshot.png" alt="Screenshot 1" width="300" />
+  <img src="screenshot.jpg" alt="Screenshot 1" width="300" />
 </p>
 
-## Features
+## ✨ Features
 
 - 🔎 Instant recipe search
 - 🍳 Ingredient & instructions view
@@ -24,13 +24,13 @@ A modern Android recipe search app built with Jetpack Compose and MVI architectu
 - **Image Loading**: Coil
 - **State Management**: ViewModel + StateFlow
 
-## API
+## 🔌 API
 - [TheMealDB API](https://themealdb.com/)
 
 
-## Contributing
+## 🙌 Contributing
 
-Contributions are welcome!
+Contributions are welcome!  
 If you find any issues or want to enhance the app, feel free to submit a pull request.
 
 ### Made with ❤️ by Monotosh
