@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-merged_res-46:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-main-48:\\xml\\backup_rules.xml"
-    },
-    {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-merged_res-46:\\drawable_loading_gif.gif.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-main-48:\\drawable\\loading_gif.gif"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-merged_res-46:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-main-48:\\xml\\backup_rules.xml"
     },
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-merged_res-46:\\mipmap-mdpi_ic_launcher.webp.flat",
@@ -50,6 +50,10 @@
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-merged_res-46:\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-main-48:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-merged_res-46:\\drawable_loading.gif.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-main-48:\\drawable\\loading.gif"
     },
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.4\\com.monotoshghosh.recipefinder.app-merged_res-46:\\mipmap-xxhdpi_ic_launcher.webp.flat",

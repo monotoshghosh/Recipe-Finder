@@ -4,17 +4,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
 import coil.compose.SubcomposeAsyncImage
 import coil.decode.GifDecoder
 import coil.request.ImageRequest
@@ -30,7 +26,7 @@ fun LoadingComponent() {
     ){
         SubcomposeAsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
-                .data("https://media4.giphy.com/media/uIJBFZoOaifHf52MER/giphy.gif") // Replace with your GIF URL or file
+                .data(R.drawable.loading) // Replace with your GIF URL or file
                 .decoderFactory(GifDecoder.Factory())
                 .crossfade(true)
                 .build(),
