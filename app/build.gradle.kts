@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.monotoshghosh.recipefinder"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.monotoshghosh.recipefinder"
@@ -72,8 +72,13 @@ dependencies {
     implementation("io.ktor:ktor-client-content-negotiation:2.3.2")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
     implementation("com.google.code.gson:gson:2.8.9")
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("io.coil-kt:coil-compose:2.5.0")
 
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
+
+//    implementation("io.coil-kt:coil-compose:2.5.0") // You might already have this
+    implementation("io.coil-kt:coil-gif:2.5.0")
+
+
 
 }
