@@ -33,4 +33,6 @@ A modern Android recipe search app built with Jetpack Compose and MVI architectu
 Contributions are welcome!  
 If you find any issues or want to enhance the app, feel free to submit a pull request.
 
+<br>
+
 ### Made with ❤️ by Monotosh
