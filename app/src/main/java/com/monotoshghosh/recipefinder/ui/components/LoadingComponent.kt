@@ -26,7 +26,7 @@ fun LoadingComponent() {
     ){
         SubcomposeAsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
-                .data(R.drawable.loading) // Replace with your GIF URL or file
+                .data(R.drawable.loading)
                 .decoderFactory(GifDecoder.Factory())
                 .crossfade(true)
                 .build(),

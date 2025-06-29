@@ -28,7 +28,7 @@ fun SuccessComponent(recipes: List<Meal>, onSearchClicked: (query: String) -> Un
             fontWeight = FontWeight.Black,
             fontFamily = FontFamily.Serif,
             fontSize = 32.sp,
-            color = Color.White, // ✅ Make the text white
+            color = Color.White, // Text White
             modifier = Modifier
                 .padding(8.dp)
                 .align(Alignment.CenterHorizontally)
