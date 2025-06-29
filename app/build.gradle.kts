@@ -73,4 +73,7 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
     implementation("com.google.code.gson:gson:2.8.9")
     implementation("io.coil-kt:coil-compose:2.4.0")
+
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
+
 }

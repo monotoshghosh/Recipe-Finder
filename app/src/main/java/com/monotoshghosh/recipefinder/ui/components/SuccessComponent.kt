@@ -24,7 +24,7 @@ fun SuccessComponent(recipes: List<Meal>, onSearchClicked: (query: String) -> Un
             .padding(8.dp)
     ){
         Text(
-            text = "Recipe Finder",
+            text = "Recipe Finder😋",
             fontWeight = FontWeight.Black,
             fontFamily = FontFamily.Serif,
             fontSize = 32.sp,

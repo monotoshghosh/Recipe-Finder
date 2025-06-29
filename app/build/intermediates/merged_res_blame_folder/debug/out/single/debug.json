@@ -4,6 +4,10 @@
         "source": "com.monotoshghosh.recipefinder.app-main-48:/mipmap-hdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.monotoshghosh.recipefinder.app-merged_res-46:/drawable_loading_gif.gif.flat",
+        "source": "com.monotoshghosh.recipefinder.app-main-48:/drawable/loading_gif.gif"
+    },
+    {
         "merged": "com.monotoshghosh.recipefinder.app-merged_res-46:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "com.monotoshghosh.recipefinder.app-main-48:/mipmap-anydpi-v26/ic_launcher.xml"
     },
