@@ -1,12 +1,12 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.monotoshghosh.recipefinder"
+3    package="com.monotoshghosh.recipefinder.dev"
 4    android:versionCode="1"
-5    android:versionName="1.0" >
+5    android:versionName="1.0-dev" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="24"
-9        android:targetSdkVersion="33" />
+9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
 11-->D:\github\Recipe Finder\app\src\main\AndroidManifest.xml:5:5-66
@@ -14,12 +14,12 @@
 12
 13    <permission
 13-->[androidx.core:core:1.12.0] C:\Users\ASUS\.gradle\caches\transforms-3\cba2f6d3c838cc2bf05f540407833d0b\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
-14        android:name="com.monotoshghosh.recipefinder.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14        android:name="com.monotoshghosh.recipefinder.dev.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 14-->[androidx.core:core:1.12.0] C:\Users\ASUS\.gradle\caches\transforms-3\cba2f6d3c838cc2bf05f540407833d0b\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
 15        android:protectionLevel="signature" />
 15-->[androidx.core:core:1.12.0] C:\Users\ASUS\.gradle\caches\transforms-3\cba2f6d3c838cc2bf05f540407833d0b\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
 16
-17    <uses-permission android:name="com.monotoshghosh.recipefinder.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17    <uses-permission android:name="com.monotoshghosh.recipefinder.dev.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 17-->[androidx.core:core:1.12.0] C:\Users\ASUS\.gradle\caches\transforms-3\cba2f6d3c838cc2bf05f540407833d0b\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
 17-->[androidx.core:core:1.12.0] C:\Users\ASUS\.gradle\caches\transforms-3\cba2f6d3c838cc2bf05f540407833d0b\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 18
@@ -84,7 +84,7 @@
 50-->[androidx.emoji2:emoji2:1.4.0] C:\Users\ASUS\.gradle\caches\transforms-3\a9afcd7229914c6a4069f0879196fe17\transformed\emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
 51            android:name="androidx.startup.InitializationProvider"
 51-->[androidx.emoji2:emoji2:1.4.0] C:\Users\ASUS\.gradle\caches\transforms-3\a9afcd7229914c6a4069f0879196fe17\transformed\emoji2-1.4.0\AndroidManifest.xml:25:13-67
-52            android:authorities="com.monotoshghosh.recipefinder.androidx-startup"
+52            android:authorities="com.monotoshghosh.recipefinder.dev.androidx-startup"
 52-->[androidx.emoji2:emoji2:1.4.0] C:\Users\ASUS\.gradle\caches\transforms-3\a9afcd7229914c6a4069f0879196fe17\transformed\emoji2-1.4.0\AndroidManifest.xml:26:13-68
 53            android:exported="false" >
 53-->[androidx.emoji2:emoji2:1.4.0] C:\Users\ASUS\.gradle\caches\transforms-3\a9afcd7229914c6a4069f0879196fe17\transformed\emoji2-1.4.0\AndroidManifest.xml:27:13-37

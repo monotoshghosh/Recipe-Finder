@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.monotoshghosh.recipefinder"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -22,6 +22,12 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
