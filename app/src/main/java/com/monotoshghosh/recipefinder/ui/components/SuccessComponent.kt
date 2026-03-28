@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,6 +22,7 @@ fun SuccessComponent(recipes: List<Meal>, onSearchClicked: (query: String) -> Un
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black) // Set background to black
+            .systemBarsPadding()
             .padding(8.dp)
     ){
         Text(
