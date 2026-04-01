@@ -164,6 +164,7 @@ int id view_tree_on_back_pressed_dispatcher_owner 0x7f050054
 int id view_tree_saved_state_registry_owner 0x7f050055
 int id view_tree_view_model_store_owner 0x7f050056
 int id wrapped_composition_tag 0x7f050057
+int integer google_play_services_version 0x7f060001
 int integer status_bar_notification_info_maxnum 0x7f060000
 int layout custom_dialog 0x7f070000
 int layout ime_base_split_test_activity 0x7f070001
@@ -193,6 +194,7 @@ int string call_notification_screening_text 0x7f09000c
 int string close_drawer 0x7f09000d
 int string close_sheet 0x7f09000e
 int string collapsed 0x7f09000f
+int string common_google_play_services_unknown_issue 0x7f090053
 int string date_input_headline 0x7f090010
 int string date_input_headline_description 0x7f090011
 int string date_input_invalid_for_pattern 0x7f090012
@@ -268,6 +270,7 @@ int style TextAppearance_Compat_Notification_Info 0x7f0a0004
 int style TextAppearance_Compat_Notification_Line2 0x7f0a0005
 int style TextAppearance_Compat_Notification_Time 0x7f0a0006
 int style TextAppearance_Compat_Notification_Title 0x7f0a0007
+int style Theme_PlayCore_Transparent 0x7f0a000b
 int style Theme_RecipeFinderApp 0x7f0a0008
 int style Widget_Compat_NotificationActionContainer 0x7f0a0009
 int style Widget_Compat_NotificationActionText 0x7f0a000a
