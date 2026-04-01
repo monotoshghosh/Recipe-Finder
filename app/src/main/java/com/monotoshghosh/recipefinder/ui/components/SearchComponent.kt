@@ -92,7 +92,7 @@ fun SearchComponent(onSearchClicked: (query: String) -> Unit) {
                         onSearchClicked(query)
 
                     } else {
-                        errorMessage = "Enter a query first"
+                        errorMessage = "Please fill the field"
                     }
                 }
             ),
@@ -107,7 +107,7 @@ fun SearchComponent(onSearchClicked: (query: String) -> Unit) {
                         onSearchClicked(query)
 
                     } else {
-                        errorMessage = "Enter a query first"
+                        errorMessage = "Please fill the field"
                     }
                 }) {
                     Icon(
