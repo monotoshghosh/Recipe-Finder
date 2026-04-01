@@ -16,6 +16,10 @@ import com.monotoshghosh.recipefinder.ui.screens.HomeScreen
 import com.monotoshghosh.recipefinder.ui.theme.RecipeFinderAppTheme
 import com.monotoshghosh.recipefinder.ui.viewmodel.RecipeViewModel
 
+import androidx.compose.runtime.*
+import com.google.firebase.auth.FirebaseAuth
+import com.monotoshghosh.recipefinder.ui.screens.LoginScreen
+
 class MainActivity : ComponentActivity() {
     private val recipeViewModel: RecipeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +34,22 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HomeScreen(recipeViewModel = recipeViewModel)
+                    var isLoggedIn by remember {
+                        mutableStateOf(FirebaseAuth.getInstance().currentUser != null)
+                    }
+
+                    if (isLoggedIn) {
+                        HomeScreen(recipeViewModel = recipeViewModel)
+                    } else {
+                        LoginScreen(
+                            onLoginSuccess = {
+                                isLoggedIn = true
+                            },
+                            onNavigateToRegister = {
+                                // later
+                            }
+                        )
+                    }
                 }
             }
         }
