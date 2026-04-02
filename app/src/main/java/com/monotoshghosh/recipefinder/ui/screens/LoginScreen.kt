@@ -1,6 +1,10 @@
 package com.monotoshghosh.recipefinder.ui.screens
 
+import android.app.Activity // 🔥 NEW
 import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult // 🔥 NEW
+import androidx.activity.result.contract.ActivityResultContracts // 🔥 NEW
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -20,12 +24,18 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.ui.text.input.VisualTransformation
 import com.google.firebase.auth.FirebaseAuth
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.ui.res.painterResource
 import com.monotoshghosh.recipefinder.R
+
+// 🔥 NEW IMPORTS
+import com.google.android.gms.auth.api.signin.*
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.GoogleAuthProvider
 
 @Composable
 fun LoginScreen(
@@ -34,6 +44,7 @@ fun LoginScreen(
 ) {
 
     val context = LocalContext.current
+    val activity = context as Activity // 🔥 NEW
     val auth = FirebaseAuth.getInstance()
 
     var email by remember { mutableStateOf("") }
@@ -42,6 +53,52 @@ fun LoginScreen(
     var isLoading by remember { mutableStateOf(false) }
     var isGoogleLoading by remember { mutableStateOf(false) }
     var passwordVisible by remember { mutableStateOf(false) }
+
+    // 🔥 NEW: Google Sign-In setup
+    val googleSignInClient = GoogleSignIn.getClient(
+        context,
+        GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken("495564766549-cautihtg791k8cbst6hmdlkvjdvk2lem.apps.googleusercontent.com")
+            .requestEmail()
+            .build()
+    )
+
+    // 🔥 NEW: launcher
+    val launcher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+
+        if (result.resultCode == Activity.RESULT_OK) {
+
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+
+            try {
+                val account = task.getResult(ApiException::class.java)
+
+                val credential = GoogleAuthProvider.getCredential(
+                    account.idToken,
+                    null
+                )
+
+                isGoogleLoading = true
+
+                auth.signInWithCredential(credential)
+                    .addOnCompleteListener {
+                        isGoogleLoading = false
+
+                        if (it.isSuccessful) {
+                            Toast.makeText(context, "Google Login Success", Toast.LENGTH_SHORT).show()
+                            onLoginSuccess()
+                        } else {
+                            Toast.makeText(context, "Google Sign-In Failed", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+            } catch (e: Exception) {
+                Toast.makeText(context, "Google Error", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     Box(
         modifier = Modifier
@@ -181,14 +238,15 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            // GOOGLE BUTTON (UI only for now)
+            // 🔥 UPDATED GOOGLE BUTTON
             IconButton(
                 onClick = {
-                    Toast.makeText(context, "Google Sign-In setup next", Toast.LENGTH_SHORT).show()
+                    val signInIntent = googleSignInClient.signInIntent
+                    launcher.launch(signInIntent)
                 }
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.google), // add this image
+                    painter = painterResource(id = R.drawable.google),
                     contentDescription = null,
                     modifier = Modifier.size(40.dp)
                 )

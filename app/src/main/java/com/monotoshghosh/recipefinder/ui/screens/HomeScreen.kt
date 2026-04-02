@@ -18,6 +18,7 @@ fun HomeScreen(
     onLogout: () -> Unit
 
 ) {
+    val context = androidx.compose.ui.platform.LocalContext.current
     val state by recipeViewModel.state
 
     when(state) {
@@ -32,8 +33,24 @@ fun HomeScreen(
 
                 // Logout logic
                 onLogoutClicked = {
+
+                    val googleSignInClient = com.google.android.gms.auth.api.signin.GoogleSignIn.getClient(
+                        context,
+                        com.google.android.gms.auth.api.signin.GoogleSignInOptions.Builder(
+                            com.google.android.gms.auth.api.signin.GoogleSignInOptions.DEFAULT_SIGN_IN
+                        )
+                            .requestEmail()
+                            .build()
+                    )
+
+                    // 🔥 Google logout
+                    googleSignInClient.signOut()
+                    googleSignInClient.revokeAccess()
+
+                    // 🔥 Firebase logout
                     FirebaseAuth.getInstance().signOut()
-                    onLogout()   // go back to login screen
+
+                    onLogout()
                 }
                 )
         }
