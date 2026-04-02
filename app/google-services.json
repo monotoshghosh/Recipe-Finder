@@ -1,0 +1,116 @@
+{
+  "project_info": {
+    "project_number": "495564766549",
+    "project_id": "recipefinder-614a3",
+    "storage_bucket": "recipefinder-614a3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495564766549:android:725f697a36a7acacaa43dc",
+        "android_client_info": {
+          "package_name": "com.monotoshghosh.recipefinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495564766549-0fplv4eq880bf5gaiqregeopnv2pknfm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monotoshghosh.recipefinder",
+            "certificate_hash": "5f6e01895ab74d12a76d8ac709574f81416a7136"
+          }
+        },
+        {
+          "client_id": "495564766549-826rmd6m906c5a2gqb6acuq753o887vj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monotoshghosh.recipefinder",
+            "certificate_hash": "94531460359d10ec0bf217b0502296854a727ba3"
+          }
+        },
+        {
+          "client_id": "495564766549-lgshno88h2f53ctm8dqh7vv6sdgvph63.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monotoshghosh.recipefinder",
+            "certificate_hash": "f9c54cafb8ad3be29cdb74429fe9fdbcd187aaa0"
+          }
+        },
+        {
+          "client_id": "495564766549-cautihtg791k8cbst6hmdlkvjdvk2lem.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnEY8Mp8wQWwz0_iRyH5lLgmoL60-XubM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495564766549-cautihtg791k8cbst6hmdlkvjdvk2lem.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495564766549:android:041337fb2e096409aa43dc",
+        "android_client_info": {
+          "package_name": "com.monotoshghosh.recipefinder.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495564766549-c660lpsj3l8gu0a4rbe49gfpbb3eu94r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monotoshghosh.recipefinder.dev",
+            "certificate_hash": "5f6e01895ab74d12a76d8ac709574f81416a7136"
+          }
+        },
+        {
+          "client_id": "495564766549-h1k1l0044ei2rfre0h81ab6ankuuuojn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monotoshghosh.recipefinder.dev",
+            "certificate_hash": "f9c54cafb8ad3be29cdb74429fe9fdbcd187aaa0"
+          }
+        },
+        {
+          "client_id": "495564766549-mq8kii2vb0d0ees22m8c854o9dmg4235.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monotoshghosh.recipefinder.dev",
+            "certificate_hash": "94531460359d10ec0bf217b0502296854a727ba3"
+          }
+        },
+        {
+          "client_id": "495564766549-cautihtg791k8cbst6hmdlkvjdvk2lem.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnEY8Mp8wQWwz0_iRyH5lLgmoL60-XubM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495564766549-cautihtg791k8cbst6hmdlkvjdvk2lem.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
