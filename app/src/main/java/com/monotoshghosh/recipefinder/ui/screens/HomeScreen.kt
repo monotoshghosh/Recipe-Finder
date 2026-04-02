@@ -3,6 +3,7 @@ package com.monotoshghosh.recipefinder.ui.screens
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import com.google.firebase.auth.FirebaseAuth
 import com.monotoshghosh.recipefinder.ui.components.ErrorComponent
 import com.monotoshghosh.recipefinder.ui.components.LoadingComponent
 import com.monotoshghosh.recipefinder.ui.components.SuccessComponent
@@ -11,7 +12,12 @@ import com.monotoshghosh.recipefinder.ui.viewmodel.RecipeViewModel
 import com.monotoshghosh.recipefinder.ui.viewmodel.RecipeViewState
 
 @Composable
-fun HomeScreen(recipeViewModel: RecipeViewModel) {
+fun HomeScreen(
+    recipeViewModel: RecipeViewModel,
+
+    onLogout: () -> Unit
+
+) {
     val state by recipeViewModel.state
 
     when(state) {
@@ -19,8 +25,17 @@ fun HomeScreen(recipeViewModel: RecipeViewModel) {
         is RecipeViewState.Success -> {
             val recipes = (state as RecipeViewState.Success).recipes
             SuccessComponent(recipes = recipes, onSearchClicked = {query ->
-                recipeViewModel.processIntent(RecipeViewIntent.SearchRecipes(query))
-            })
+                recipeViewModel.processIntent(RecipeViewIntent.SearchRecipes(query)
+
+                )
+            },
+
+                // Logout logic
+                onLogoutClicked = {
+                    FirebaseAuth.getInstance().signOut()
+                    onLogout()   // go back to login screen
+                }
+                )
         }
         is RecipeViewState.Error -> {
             val message = (state as RecipeViewState.Error).message

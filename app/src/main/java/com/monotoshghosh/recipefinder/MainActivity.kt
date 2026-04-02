@@ -1,5 +1,6 @@
 package com.monotoshghosh.recipefinder
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,19 +8,20 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.monotoshghosh.recipefinder.ui.screens.HomeScreen
-import com.monotoshghosh.recipefinder.ui.theme.RecipeFinderAppTheme
-import com.monotoshghosh.recipefinder.ui.viewmodel.RecipeViewModel
 
-import androidx.compose.runtime.*
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.firebase.auth.FirebaseAuth
+
+import com.monotoshghosh.recipefinder.ui.screens.HomeScreen
 import com.monotoshghosh.recipefinder.ui.screens.LoginScreen
 import com.monotoshghosh.recipefinder.ui.screens.RegisterScreen
+import com.monotoshghosh.recipefinder.ui.theme.RecipeFinderAppTheme
+import com.monotoshghosh.recipefinder.ui.viewmodel.RecipeViewModel
 
 class MainActivity : ComponentActivity() {
     private val recipeViewModel: RecipeViewModel by viewModels()
@@ -39,12 +41,20 @@ class MainActivity : ComponentActivity() {
                         mutableStateOf(FirebaseAuth.getInstance().currentUser != null)
                     }
 
-// 🔥 NEW: screen state
+                    // screen state
                     var showRegister by remember { mutableStateOf(false) }
 
                     when {
                         isLoggedIn -> {
-                            HomeScreen(recipeViewModel = recipeViewModel)
+                            HomeScreen(
+                                recipeViewModel = recipeViewModel,
+
+                                // logout handling
+                                onLogout = {
+                                    isLoggedIn = false
+                                }
+
+                            )
                         }
 
                         showRegister -> {
@@ -65,7 +75,7 @@ class MainActivity : ComponentActivity() {
                                     isLoggedIn = true
                                 },
                                 onNavigateToRegister = {
-                                    showRegister = true   // 🔥 FIXED
+                                    showRegister = true
                                 }
                             )
                         }
