@@ -19,6 +19,7 @@ import com.monotoshghosh.recipefinder.ui.viewmodel.RecipeViewModel
 import androidx.compose.runtime.*
 import com.google.firebase.auth.FirebaseAuth
 import com.monotoshghosh.recipefinder.ui.screens.LoginScreen
+import com.monotoshghosh.recipefinder.ui.screens.RegisterScreen
 
 class MainActivity : ComponentActivity() {
     private val recipeViewModel: RecipeViewModel by viewModels()
@@ -38,17 +39,36 @@ class MainActivity : ComponentActivity() {
                         mutableStateOf(FirebaseAuth.getInstance().currentUser != null)
                     }
 
-                    if (isLoggedIn) {
-                        HomeScreen(recipeViewModel = recipeViewModel)
-                    } else {
-                        LoginScreen(
-                            onLoginSuccess = {
-                                isLoggedIn = true
-                            },
-                            onNavigateToRegister = {
-                                // later
-                            }
-                        )
+// 🔥 NEW: screen state
+                    var showRegister by remember { mutableStateOf(false) }
+
+                    when {
+                        isLoggedIn -> {
+                            HomeScreen(recipeViewModel = recipeViewModel)
+                        }
+
+                        showRegister -> {
+                            RegisterScreen(
+                                onRegisterSuccess = {
+                                    isLoggedIn = true
+                                    showRegister = false
+                                },
+                                onNavigateToLogin = {
+                                    showRegister = false
+                                }
+                            )
+                        }
+
+                        else -> {
+                            LoginScreen(
+                                onLoginSuccess = {
+                                    isLoggedIn = true
+                                },
+                                onNavigateToRegister = {
+                                    showRegister = true   // 🔥 FIXED
+                                }
+                            )
+                        }
                     }
                 }
             }
